@@ -12,7 +12,8 @@ func main() {
 	routes.RegisterScreenshotRoutes(mux)
 	routes.RegisterHealthRoutes(mux)
 
-	log.Printf("Coucou")
+	log.Printf("Server starting on port %d", 8080)
 
 	log.Fatal(http.ListenAndServe(":8080", mux))
+
 }

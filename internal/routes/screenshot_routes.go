@@ -15,6 +15,8 @@ func RegisterScreenshotRoutes(mux *http.ServeMux) {
 			return
 		}
 
+		log.Printf("Helloworld")
+
 		img, err := screenshot.TakeScreenshot(url)
 		if err != nil {
 			log.Printf("TakeScreenshot error: %v\nStack:\n%s", err, debug.Stack())
