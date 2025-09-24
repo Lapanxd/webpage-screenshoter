@@ -1,0 +1,19 @@
+FROM golang:1.25-trixie
+
+WORKDIR /app
+
+RUN go install github.com/air-verse/air@latest
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends chromium && \
+    ln -sf /usr/bin/chromium /usr/bin/chromium-browser && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY go.mod go.sum ./
+RUN go mod download
+
+ENV CHROME_PATH=/usr/bin/chromium
+
+EXPOSE 8080
+
+CMD ["air"]
