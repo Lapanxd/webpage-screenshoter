@@ -18,6 +18,8 @@ RUN apt-get update && \
 
 COPY --from=builder /app/server /app/server
 
+COPY --from=builder /app/public /app/public
+
 WORKDIR /app
 
 ENV CHROME_PATH=/usr/bin/chromium
