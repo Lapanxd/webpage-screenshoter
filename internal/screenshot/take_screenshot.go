@@ -19,9 +19,9 @@ func TakeScreenshot(url string) ([]byte, error) {
 	tasks := chromedp.Tasks{
 		chromedp.Navigate(url),
 		chromedp.WaitReady("body", chromedp.ByQuery),
-		chromedp.EmulateViewport(1920, 1080),
+		chromedp.EmulateViewport(1280, 720),
 		// hide cookies
-		chromedp.Evaluate(`document.querySelectorAll('[id*="cookie"], [class*="cookie"], [id*="consent"], [class*="consent"], [id*="gdpr"], [class*="gdpr"], [id*="privacy"], [class*="privacy"], [class*="banner"], [id*="banner"]').forEach(e => e.remove())`, nil),
+		//chromedp.Evaluate(`document.querySelectorAll('[id*="cookie"], [class*="cookie"], [id*="consent"], [class*="consent"], [id*="gdpr"], [class*="gdpr"], [id*="privacy"], [class*="privacy"], [class*="banner"], [id*="banner"]').forEach(e => e.remove())`, nil),
 		chromedp.Sleep(5 * time.Second),
 		chromedp.FullScreenshot(&buf, 90),
 	}
