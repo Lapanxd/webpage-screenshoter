@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "SUSE Mono", monospace, system-ui, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.4;
+    font-weight: 400;
+    padding: 60px 24px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 500;
+    line-height: 0.9;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    display: block;
+}
+
+#form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 300px;
+    border: 1px solid #e8e8e8;
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    padding: 16px 22px;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.2s ease;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: inherit;
+}
+
+.search-input:focus {
+    border-color: #8e8e8e;
+}
+
+.search-input::placeholder {
+    color: #666666;
+}
+
+button {
+    background-color: #000000;
+    border: none;
+    border-bottom-right-radius: 5rem;
+    border-top-right-radius: 5rem;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 18px 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: #333333;
+}
+
+#result {
+    width: 100%;
+}
+
+.screenshot-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.screenshot-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    font-size: 16px;
+    color: #666666;
+    gap: 12px;
+}
+
+.loader::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #e8e8e8;
+    border-top: 2px solid #000000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.error-message {
+    color: #666666;
+    font-size: 16px;
+    text-align: center;
+    padding: 60px 20px;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    #form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin-bottom: 60px;
+    }
+
+    .search-input {
+        min-width: auto;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 24px 16px;
+    }
+
+    .search-input, button {
+        border-radius: 5rem;
+    }
+}

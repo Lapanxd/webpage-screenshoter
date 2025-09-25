@@ -14,7 +14,7 @@ func securityHeaders(next http.Handler) http.Handler {
 		FrameDeny:             true,
 		ContentTypeNosniff:    true,
 		BrowserXssFilter:      true,
-		ContentSecurityPolicy: "default-src 'self'",
+		ContentSecurityPolicy: "default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;",
 	})
 
 	return securityMiddleware.Handler(next)

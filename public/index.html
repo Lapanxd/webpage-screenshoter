@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Webpage Screenshoter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Webpage Screenshoter</h1>
+<div class="container">
+    <h1>Webpage<br> Screenshoter</h1>
 
-<form id="form">
-    <label for="urlInput">URL</label>
-    <input type="text" id="urlInput" placeholder="https://example.com" required autocomplete="off">
-    <button type="submit">Capture</button>
-</form>
+    <form id="form">
+        <label for="url-input"></label>
+        <input type="text" id="url-input" class="search-input" placeholder="https://example.com" required autocomplete="off">
+        <button type="submit">Capture</button>
+    </form>
 
-<div id="result"></div>
+    <div id="result"></div>
+</div>
 
 <script src="app.js"></script>
 </body>
