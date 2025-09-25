@@ -80,6 +80,11 @@ button:hover {
     background-color: #333333;
 }
 
+#response-time {
+    padding: 10px 0;
+    color: #666666;
+}
+
 #result {
     width: 100%;
 }

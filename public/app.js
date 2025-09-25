@@ -7,6 +7,8 @@ form.addEventListener("submit", async (e) => {
     const url = input.value.trim();
     if (!url) return;
 
+    const startTime = performance.now();
+
     const loader = document.createElement("div");
     loader.className = "loader";
     loader.textContent = "Capture en cours...";
@@ -21,7 +23,13 @@ form.addEventListener("submit", async (e) => {
     img.alt = "Screenshot de " + url;
 
     img.onload = () => {
+        const endTime = performance.now();
+        const loadTime = Math.round(endTime - startTime);
+
         result.innerHTML = "";
+
+        const responseTimeElement = document.getElementById("response-time");
+        responseTimeElement.textContent = `Chargé en ${loadTime} ms`;
         container.appendChild(img);
         result.appendChild(container);
 
